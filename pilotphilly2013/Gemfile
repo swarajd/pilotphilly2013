@@ -42,3 +42,6 @@ gem 'mongo'
 
 # for uploads
 gem 'paperclip'
+
+# for users
+gem 'devise'

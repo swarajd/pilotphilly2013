@@ -1,9 +1,4 @@
 Pilotphilly2013::Application.routes.draw do
-  resources :users
-
-
-  get "users/new"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

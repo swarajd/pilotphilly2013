@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Pilotphilly2013::Application.config.secret_token = 'abd3f1183765cf59f5b9a1259771024f7fd375c2236ec19236bfe9d4ce52cae511af685a337ee414593bd54ca73e010e1afc3f2ca3f615bfaa43bb99721d01ed'
+Pilotphilly2013::Application.config.secret_token = '359fd49354e140a20e928b50b184db7f0cf5dc5f89530d829917c83ae88d473c6523822fa4559ce865f8207050a189340f638cef1628d30aa16536b099bbc6ba'
