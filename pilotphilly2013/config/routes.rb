@@ -50,7 +50,14 @@ Pilotphilly2013::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  #root :to => 'home#index'
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  root :to => "users#new"
+  resources :users
+  resources :sessions
+  get "secret" => "secret#index"
 
   # See how all your routes lay out with "rake routes"
 
