@@ -45,3 +45,6 @@ gem 'paperclip'
 
 # for users
 gem 'devise'
+
+#for errors
+gem 'better_errors'
