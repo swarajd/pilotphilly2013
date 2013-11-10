@@ -9,4 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def process_file
+    system('bash ../bash/encryptFile.sh '+params[:filename]+' '+params[:filename]+'.des3 '+@user.unique_id+@user.name)
+  end
 end
