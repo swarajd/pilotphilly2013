@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-  def generateid
+  def generate_id
     if @unique_id != nil
       prng = Random.new
       @unique_id = prng.rand(100000000)

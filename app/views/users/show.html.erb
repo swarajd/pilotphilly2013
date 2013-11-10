@@ -2,13 +2,15 @@
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 <% @user.load_files %>
-<form action="<%=@user.id%>/Submit/submit_file" method="post"
-	enctype="multipart/form-data">
-	<label for="file">Filename:</label>
-	<input type="file" name="file" id="file"><br>
-	<input type="Submit" name="Submit" value="Submit">
-</form>
-<form action="<%=@user.id%>/user_files" method="get">
+<% @user.generate_id %>
+
+<%= form_for @user do |f| %>
+  <%= f.file_field :fl %>
+  <%= submit_tag("submit") %>
+<% end %>
+
+
+<form action="/users/<%=@user.id%>/user_files" method="get">
     <button type="submit"><a href="<%=@user.id%>/view" >Your Files</a></button>
 </form>
 
