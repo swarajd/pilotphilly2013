@@ -4,7 +4,9 @@ Myapp::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+  #root :to => "home#index"
+  root :to => "submit#submit"
+  get 'users/:id/view' => 'Submit#view_files'
   get 'users/:id/user_files'
   get 'Users/:id/user_files'
   get 'users/:id/Submit/submit_file'

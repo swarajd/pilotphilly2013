@@ -1,0 +1,20 @@
+<tr>
+<% @user.files.each do |file| %> <!-- how do we get rails to get the files -->
+  <td><% file %></td>
+  <td><button type="button" onclick="@user.download_file(file)">Download</button></td> <!-- paperclip thing -->
+  <td><button type="button" onclick="@user.delete_file(file)">Delete</button></td>     <!-- paperclip thing -->
+  <td>
+    <script>
+      function getName() {
+        document.renameForm.filename.value = prompt('enter a filename');
+        document.forms["renameForm"].submit();
+      }
+    </script>
+    <form action="rename" method="post" id="renameForm">
+      <input id="filename" name="filename" value="">
+      <button type="button" onclick="getName()">rename</button>
+    </form>
+  </td>
+
+<% end %>
+</tr>

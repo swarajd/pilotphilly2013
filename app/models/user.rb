@@ -6,7 +6,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :unique_id
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  def generateid
+    if @unique_id != nil
+      prng = Random.new
+      @unique_id = prng.rand(100000000)
+    end
+  end
   def load_files
     udir = 'files/'+name+'/'
     if File.directory?(udir)==false

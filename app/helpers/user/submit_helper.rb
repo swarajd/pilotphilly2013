@@ -1,0 +1,2 @@
+module User::SubmitHelper
+end
