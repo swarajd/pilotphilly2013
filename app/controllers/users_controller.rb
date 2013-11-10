@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     @user.update_attributes(params[:fl])
     @user[:filename] = params[:fl]
+    system('bash ../bash/encryptFile.sh '+File.basename(params[:user][:fl])+' '+File.basename(params[:user][:fl])+'.des3 '+@user.unique_id+@user.name)
     redirect_to index
   end
 end
