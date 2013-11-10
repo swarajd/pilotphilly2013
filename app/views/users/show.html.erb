@@ -1,8 +1,8 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
-
-<form action="submit" method="post"
+<% @user.load_files %>
+<form action="%:user%/submit" method="post"
 	enctype="multipart/form-data">
 	<label for="file">Filename:</label>
 	<input type="file" name="file" id="file"><br>
