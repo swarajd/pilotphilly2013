@@ -7,6 +7,7 @@ Myapp::Application.routes.draw do
   #root :to => "home#index"
   root :to => "submit#view_files"
   get 'users/:id/view' => 'Submit#view_files'
+  get 'upload/create/' => 'Upload#create'
   get 'users/:id/user_files'
   get 'Users/:id/user_files'
   get 'users/:id/Submit/submit'
