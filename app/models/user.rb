@@ -11,8 +11,6 @@ class User < ActiveRecord::Base
     udir = 'files/'+name+'/'
     if File.directory?(udir)==false
       system('mkdir -p '+udir)
-      # outp = `'mkdir -p '+udir`
-      #puts outp
     end
     @files = Dir.entries(udir)
     @files.delete_at(0)

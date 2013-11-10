@@ -2,11 +2,14 @@
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 <% @user.load_files %>
-<form action="%:user%/submit" method="post"
+<form action="<%=@user.id%>/Submit/submit_file" method="post"
 	enctype="multipart/form-data">
 	<label for="file">Filename:</label>
 	<input type="file" name="file" id="file"><br>
-	<input type="submit" name="submit" value="Submit">
+	<input type="Submit" name="Submit" value="Submit">
+</form>
+<form action="<%=@user.id%>/user_files" method="get">
+    <input type="Submit" value="Your files">
 </form>
 
 
